@@ -12,5 +12,6 @@ wait
 echo "Finishied copying files"
 ssh $USERNAME@$IPADDRESS "rm -rf ${REMOTEFILELOCATION}" &
 echo "Deleting copied files"
-ssh $USERNAME@$IPADDRESS "mkdir ${REMOTEFILELOCATION}"
+wait
+ssh $USERNAME@$IPADDRESS "mkdir ${REMOTEFILELOCATION}" &
 echo "Folder cleared"
