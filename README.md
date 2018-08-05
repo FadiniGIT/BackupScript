@@ -7,3 +7,5 @@ just edit to your usage
 
 
 Connects to remote -> Copy from remote to local -> cleans out the remote folder (keeps the directory there)
+
+I reccomend setting up SSH keys so you dont need to input your password
