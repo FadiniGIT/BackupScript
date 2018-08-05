@@ -1,0 +1,16 @@
+#!/bin/bash
+
+LOCALFILEDESTINATION=<FILE_DIRECTORY_HERE>
+REMOTEFILELOCATION=<FILE_DIRECTORY_HERE
+USERNAME=<USERNAME_HERE>
+IPADDRESS=<IPADDRESS_HERE>
+
+echo "Connecting to host"
+scp -r $USERNAME@$IPADDRESS:$REMOTEFILELOCATION $LOCALFILEDESTINATION &
+echo "Copying files..."
+wait
+echo "Finishied copying files"
+ssh $USERNAME@$IPADDRESS "rm -rf ${REMOTEFILELOCATION}" &
+echo "Deleting copied files"
+ssh $USERNAME@$IPADDRESS "mkdir ${REMOTEFILELOCATION}"
+echo "Folder cleared"
